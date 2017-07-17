@@ -12,5 +12,7 @@
 		<module>Test-EurekaServer</module>
 		<module>Test-ZuulServer</module>
 		<module>Test-RestService</module>
+		<module>Test-RestPrivateService</module>
+		<module>Test-Swagger</module>
 	</modules>
 </project>
