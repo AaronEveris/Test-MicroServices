@@ -1,0 +1,1 @@
+mvn spring-boot:run -Dhttps.proxyHost=10.124.8.100 -Dhttps.proxyPort=8080
