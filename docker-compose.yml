@@ -1,0 +1,28 @@
+version: '2'
+services:
+  server_eureka:
+    image: server_eureka
+    ports:
+      - "8761:8761"
+  server_conf:
+    image: server_conf
+    ports: 
+      - "8888:8888"
+  server_zuul:
+    image: server_zuul
+    links:
+       - server_eureka:compeureka
+    ports:
+      - "8765:8765"
+  test_swagger:
+    image: test_swagger
+    links:
+      - server_eureka:compeureka
+  test_restprivate:
+    image: test_restprivate
+    links:
+      - server_eureka:compeureka
+  test_restpublic:
+    image: test_restpublic
+    links:
+      - server_eureka:compeureka
