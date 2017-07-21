@@ -1,0 +1,1 @@
+docker run -it --link testmicroservices_server_eureka_1:compeureka --net 6f42c0e9c145 --name test_swagger test_swagger
