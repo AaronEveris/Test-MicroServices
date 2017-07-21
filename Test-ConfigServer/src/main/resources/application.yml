@@ -5,15 +5,34 @@ info:
 # HTTP Server
 server:
  port: 8888
- 
+
 spring:
  # Spring Cloud Config Server Repository
  cloud:
   config:
    server:
     git:
-     uri: https://github.com/jmangialomini/Spring.Cloud.Config.Server
+     uri: https://github.com/AaronEveris/MicroServices-config.git
+     http:
+      proxy:
+        host: 10.124.8.100
+        port: 8080
+     https:
+      proxy:
+        host: 10.124.8.100
+        port: 8080
+     #uri: https://github.com/jmangialomini/Spring.Cloud.Config.Server
+     #uri: file://${user.home}/git/MicroServices-config
+     #uri: file:///app/ms_conf
 
  # Spring properties 
  profiles: 
   active: dev
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: false
