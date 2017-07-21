@@ -35,6 +35,10 @@ zuul:
  
 #Eureka Instance ID
 eureka:
+ client:
+  serviceUrl:
+   defaultZone: ${vcap.services.discovery-service.credentials.uri:http://compeureka:8761}/eureka/
+   #defaultZone: http://172.18.0.3:8761/eureka/
  instance:
   instanceId: ${spring.application.name}:${server.port} 
 
