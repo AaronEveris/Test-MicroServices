@@ -14,15 +14,25 @@ services:
        - server_eureka:compeureka
     ports:
       - "8765:8765"
-  test_swagger:
-    image: test_swagger
+#  test_swagger:
+#    image: test_swagger
+#    links:
+#      - server_eureka:compeureka
+  library_core:
+    image: library_core
     links:
       - server_eureka:compeureka
-  test_restprivate:
-    image: test_restprivate
+  authors_app:
+    image: authors_app
     links:
       - server_eureka:compeureka
-  test_restpublic:
-    image: test_restpublic
-    links:
-      - server_eureka:compeureka
+      - server_zuul:compzuul
+
+#  test_restprivate:
+#    image: test_restprivate
+#    links:
+#      - server_eureka:compeureka
+#  test_restpublic:
+#    image: test_restpublic
+#    links:
+#      - server_eureka:compeureka
