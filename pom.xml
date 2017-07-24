@@ -14,5 +14,7 @@
 		<module>Test-RestService</module>
 		<module>Test-RestPrivateService</module>
 		<module>Test-Swagger</module>
+		<module>Library-Core</module>
+		<module>Authors-App</module>
 	</modules>
 </project>
